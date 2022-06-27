@@ -14,6 +14,21 @@ function index(req, res) {
   })
 }
 
+function create (req, res) {
+req.body.owner = req.user.profile._id
+req.body.parking = !!req.body.parking
+Studio.create(req.body)
+.then( studio => {
+  res.redirect("/studios")
+
+})
+.catch (error => {
+  console.log(error)
+  res.redirect("/studios")
+})
+}
+
 export { 
-  index
+  index,
+  create
 }

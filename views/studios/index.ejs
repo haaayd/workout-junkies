@@ -2,7 +2,27 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Studio</h1>
+  <h1>Welcome to the world of Workout Junkies</h1>
+  <% if (user) { %> 
+    <h2>Add Studio</h2>
+    <form action="/studios" method="POST">
+      <label>
+        Name of Studio: 
+        <input type="text" name="name" autocomplete="off">
+      </label>
+      <label>
+        Location:
+        <input type="text" name="location" autocomplete="off">
+      </label>
+      <label>
+        Acessible Parking? 
+        <input type="checkbox" name="parking">
+      </label>
+      <button type="submit">Add Studio</button>
+    </form>
+    <% } %> 
+
+
   <h2>All Studios</h2>
 	<ul>
   <% studios.forEach(studio => { %>
