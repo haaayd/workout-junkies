@@ -3,7 +3,7 @@ import * as studiosCtrl from "../controllers/studios.js"
 
 const router = Router()
 
-router.get("/", studiosCtrl)
+router.get("/", studiosCtrl.index)
 
 export {
   router

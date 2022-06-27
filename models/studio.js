@@ -1,10 +1,15 @@
 import mongoose from 'mongoose'
 
+const Schema = mongoose.Schema
+
 const studioSchema = new mongoose.Schema({
   name: String,
   location: String,
-  parking: Boolean,
-  // owner: {type: Schema.Types.ObjectId, ref: "Profile"}
+  parking: {
+    type: Boolean,
+    default: false, 
+  },
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
 
 }, {
   timestamps: true

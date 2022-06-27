@@ -1,0 +1,17 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Studio</h1>
+  <h2>All Studios</h2>
+	<ul>
+  <% studios.forEach(studio => { %>
+    <li><%= studio.name %> </li>
+    <li><%= studio.location %> </li>
+    <li>Parking <%= studio.parking %> is <%= studio.parking ? 'true' : 'false' %></li>
+    <!-- <li><%= studio.classes%> </li> -->
+  <% }) %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>
