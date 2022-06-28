@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Welcome to the world of Workout Junkies</h1>
+  <h1>Welcome to the world of Workout Junkies!</h1>
   <% if (user) { %> 
     <h2>Add Studio</h2>
     <form action="/studios" method="POST">
@@ -26,10 +26,12 @@
   <h2>All Studios</h2>
 	<ul>
   <% studios.forEach(studio => { %>
-    <li><%= studio.name %> </li>
-    <li><%= studio.location %> </li>
-    <li>Parking <%= studio.parking %> is <%= studio.parking ? 'true' : 'false' %></li>
-    <!-- <li><%= studio.classes%> </li> -->
+    <li>Studio:<%= studio.name %></li>
+    <li>Location:<%= studio.location %></li>
+    <li>
+      <a href="/studios/<%= studio._id%>"><%= studio.parking%></a>
+      Accesible Parking? <%= studio.parking ? "Yes" : "No" %> 
+    </li>
   <% }) %>
   </ul>
 </section>

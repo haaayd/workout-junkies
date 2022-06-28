@@ -28,7 +28,24 @@ Studio.create(req.body)
 })
 }
 
+function show (req, res) {
+  Studio.findById(req.params.id)
+  .populate("owner")
+  .then(studio => {
+    res.render("studios/show", {
+      studio : studio, 
+      title: "Show"
+
+    })
+  })
+  .catch (error => {
+    console.log(error)
+    res.redirect("/studios")
+  })
+}
+
 export { 
   index,
-  create
+  create, 
+  show
 }

@@ -1,0 +1,12 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+	<h3><%= studio.owner.name %> Visted:</h3>
+  <h1><%= studio.name %></h1>
+  <h2>Loacted at: <%= studio.location %> </h2>
+
+  <h2>Accessible Parking: <%= studio.parking? 'Yes! ' : 'No!' %></h2>
+</section>
+
+<%- include('../partials/footer') %>
