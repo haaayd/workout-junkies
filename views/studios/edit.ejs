@@ -1,0 +1,37 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit Studio Entry! </h1>
+  <form action="/studios/<%= studio._id %>?_method=PUT" method="POST">
+    <label>
+      Studio Name: 
+      <input 
+        type="text"
+        name="name" 
+        value="<%= studio.name %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Location: 
+      <input 
+        type="text"
+        name="location" 
+        value="<%= studio.location %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Accessible Parking?
+      <input 
+        type="checkbox" 
+        name="parking" 
+				<%= studio.parking ? "checked" : "" %> 
+      >
+    </label>
+    <button type="submit">Edit Studio Entry</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>

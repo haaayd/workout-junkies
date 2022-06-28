@@ -11,6 +11,9 @@ router.get("/:id", studiosCtrl.show)
 //GET localhost:3000/studios/:id/edit
 router.get("/:id/edit", isLoggedIn, studiosCtrl.edit)
 
+//PUT localhost:3000/studios/:id
+router.put("/:id", isLoggedIn, studiosCtrl.update)
+
 //POST localhost:3000/studios
 router.post("/", isLoggedIn, studiosCtrl.create)
 

@@ -8,8 +8,9 @@
 
   <h2>Accessible Parking: <%= studio.parking? 'Yes! ' : 'No!' %></h2>
   <% if (studio.owner.equals(user?.profile._id)) { %>
-    <form action="/studios <%= studio._id%>/edit" method="GET"></form>
+    <form action="/studios/<%= studio._id%>/edit" method="GET">
     <button class="btn" type="submit">Edit Entry</button>
+  </form>
     <% } %> 
 </section>
 

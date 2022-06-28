@@ -46,7 +46,7 @@ function show (req, res) {
 function edit (req, res) {
   Studio.findById(req.params.id)
   .then(studio => {
-    res.render("stuios/edit", {
+    res.render("studios/edit", {
       studio: studio, 
       title: "Edit"
     })
@@ -57,10 +57,32 @@ function edit (req, res) {
   })
 }
 
+function update (req, res) {
+  Studio.findById(req.params.id)
+  .then( studio => {
+    if (studio.owner.equals(req.user.profile._id)) {
+      req.body.parking = !!req.body.parking
+      studio.updateOne(req.body, {new: true})
+      .then(() => {
+        res.redirect(`studios/${studio._id}`)
+
+      })
+    } else {
+      throw new Error ("👋🏽 NOT AUTHORIZED")
+    }
+  })
+  .catch (error => {
+    console.log(error)
+    res.redirect("/studios")
+  })
+
+}
+
 
 export { 
   index,
   create, 
   show, 
-  edit 
+  edit,
+  update
 }
