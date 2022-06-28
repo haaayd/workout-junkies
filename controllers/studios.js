@@ -77,6 +77,23 @@ function update (req, res) {
   })
 
 }
+function deleteStudio (req, res) {
+  Studio.findById(req.params.id)
+  .then( studio => {
+    if (studio.owner.equals(req.user.profile._id)) {
+      studio.delete()
+      .then(() => {
+        res.redirect("/studios")
+      })
+    } else {
+      throw new Error ("👋🏽 NOT AUTHORIZED")
+    }
+  })
+  .catch (error => {
+    console.log(error)
+    res.redirect("/studios")
+  })
+}
 
 
 export { 
@@ -84,5 +101,6 @@ export {
   create, 
   show, 
   edit,
-  update
+  update,
+  deleteStudio as delete, 
 }

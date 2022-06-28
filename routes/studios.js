@@ -17,6 +17,8 @@ router.put("/:id", isLoggedIn, studiosCtrl.update)
 //POST localhost:3000/studios
 router.post("/", isLoggedIn, studiosCtrl.create)
 
+//DELETE localhost:3000/studios/:id
+router.delete("/:id", isLoggedIn, studiosCtrl.delete)
 
 export {
   router
