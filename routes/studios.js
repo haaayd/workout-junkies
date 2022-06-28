@@ -22,6 +22,7 @@ router.put("/:id", isLoggedIn, studiosCtrl.update)
 //POST localhost:3000/studios
 router.post("/", isLoggedIn, studiosCtrl.create)
 router.post("/:id/classes", isLoggedIn, studiosCtrl.createClass)
+router.post("/:id/reviews", isLoggedIn, studiosCtrl.createReview)
 
 //DELETE localhost:3000/studios/:id
 router.delete("/:id", isLoggedIn, studiosCtrl.delete)
