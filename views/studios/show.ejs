@@ -29,6 +29,22 @@
 <input type="text" name="level-input">
 <button type="submit">Submit</button>
 </form>
+<% if (studio.classes.length) { %>
+  <head>
+    <h2>Class Type</h2>
+    <h2>Level</h2>
+    
+  </head>
+  <body>
+    <% studio.classes.forEach(function(aClass) { %>
+      <div><%= aClass.category%> </div>
+      <div><%= aClass.level%> </div>
+
+      <% }) %> 
+  </body>
+  <% } else { %> 
+  <h2>No classes displayed yet</h2>
+  <% } %>  
 </main>
 
 <%- include('../partials/footer') %>

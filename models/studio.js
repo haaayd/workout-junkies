@@ -8,8 +8,10 @@ const classSchema = new Schema ({
     type: String,
     enum:["beginner", "moderate", "advance", "all levels"],
     default: "all levels"
-  }
-})
+  }, 
+  }, { 
+    timestamps: true
+  })
 
 const studioSchema = new mongoose.Schema({
   name: String,
