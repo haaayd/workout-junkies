@@ -116,7 +116,6 @@ function showClass (req, res) {
     
 }
 function createClass(req, res) {
-  console.log(req.body, "LOOK AT ME!!!")
   Studio.findById(req.params.id)
   .then(studio => {
     studio.classes.push(req.body)
@@ -130,6 +129,9 @@ function createClass(req, res) {
     res.redirect("/studios")
   })
 }
+function createReview(req, res) {
+  console.log(req.body, "LOOK AT ME!!!")
+}
 
 export { 
   index,
@@ -140,5 +142,6 @@ export {
   update,
   deleteStudio as delete, 
   showClass,
-  createClass
+  createClass, 
+  createReview
 }
