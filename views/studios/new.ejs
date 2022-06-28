@@ -1,0 +1,31 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<main>
+  <section>
+    <% if (user) { %> 
+      <h2>Add Studio</h2>
+      <form action="/studios" method="POST">
+        <label>
+          Name of Studio: 
+          <input type="text" name="name" autocomplete="off">
+        </label>
+        <label>
+          Location:
+          <input type="text" name="location" autocomplete="off">
+        </label>
+        <label>
+          Acessible Parking? 
+          <input type="checkbox" name="parking">
+        </label>
+        <button type="submit">Add Studio</button>
+      </form>
+      <% } %> 
+  </section>
+</main>
+
+
+
+
+
+
+<%- include('../partials/footer') %>
