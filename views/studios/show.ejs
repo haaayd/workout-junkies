@@ -1,11 +1,11 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-
+<main>
+  <h1><%= studio.owner.name %> Visted:</h1>
+\
 <section>
-	<h3><%= studio.owner.name %> Visted:</h3>
-  <h1><%= studio.name %></h1>
+  <h2><%= studio.name %></h2>
   <h2>Loacted at: <%= studio.location %> </h2>
-
   <h2>Accessible Parking: <%= studio.parking? 'Yes! ' : 'No!' %></h2>
   <% if (studio.owner.equals(user?.profile._id)) { %>
     <form action="/studios/<%= studio._id%>/edit" method="GET">
@@ -16,5 +16,19 @@
   </form>
     <% } %> 
 </section>
+
+<h2>Classes</h2>
+<form
+  id="classes-form"
+  action="/studios/<%=studio._id%>/classes"
+  method="POST"
+>
+<label for="category">Class Type</label>
+<input type="text", name="category-input">
+<label for="level">Level</label>
+<input type="text" name="level-input">
+<button type="submit">Submit</button>
+</form>
+</main>
 
 <%- include('../partials/footer') %>

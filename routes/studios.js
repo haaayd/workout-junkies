@@ -6,8 +6,13 @@ import { isLoggedIn } from "../middleware/middleware.js"
 const router = Router()
 //GET localhost:3000/studios
 router.get("/", studiosCtrl.index)
+//GET localhost:3000/studios/new
+router.get("/new", studiosCtrl.new)
 //GET localhost:3000/studios/:id
 router.get("/:id", studiosCtrl.show)
+//GET localhost:3000/studios/:id
+router.get("/:id", isLoggedIn, studiosCtrl.showClass)
+
 //GET localhost:3000/studios/:id/edit
 router.get("/:id/edit", isLoggedIn, studiosCtrl.edit)
 

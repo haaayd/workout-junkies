@@ -13,6 +13,11 @@ function index(req, res) {
     res.redirect("/")
   })
 }
+function newStudio (req, res){
+  res.render("studios/new", {
+    title: "Add Studio"
+  })
+}
 
 function create (req, res) {
 req.body.owner = req.user.profile._id
@@ -95,12 +100,29 @@ function deleteStudio (req, res) {
   })
 }
 
+function showClass (req, res) {
+  Studio.findById(req.params.id)
+  .then(studio => {
+    res.render("studios/show", {
+      studio: studio,
+      title: "Show",
+      class: Class,
+    })
+  })
+  .catch (error => {
+    console.log(error)
+    res.redirect("/studios")
+  })
+    
+}
 
 export { 
   index,
+  newStudio as new, 
   create, 
   show, 
   edit,
   update,
   deleteStudio as delete, 
+  showClass
 }
