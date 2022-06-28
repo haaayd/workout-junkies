@@ -8,6 +8,8 @@ const router = Router()
 router.get("/", studiosCtrl.index)
 //GET localhost:3000/studios/:id
 router.get("/:id", studiosCtrl.show)
+//GET localhost:3000/studios/:id/edit
+router.get("/:id/edit", isLoggedIn, studiosCtrl.edit)
 
 //POST localhost:3000/studios
 router.post("/", isLoggedIn, studiosCtrl.create)

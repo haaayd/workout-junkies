@@ -7,6 +7,10 @@
   <h2>Loacted at: <%= studio.location %> </h2>
 
   <h2>Accessible Parking: <%= studio.parking? 'Yes! ' : 'No!' %></h2>
+  <% if (studio.owner.equals(user?.profile._id)) { %>
+    <form action="/studios <%= studio._id%>/edit" method="GET"></form>
+    <button class="btn" type="submit">Edit Entry</button>
+    <% } %> 
 </section>
 
 <%- include('../partials/footer') %>

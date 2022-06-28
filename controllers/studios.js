@@ -43,9 +43,24 @@ function show (req, res) {
     res.redirect("/studios")
   })
 }
+function edit (req, res) {
+  Studio.findById(req.params.id)
+  .then(studio => {
+    res.render("stuios/edit", {
+      studio: studio, 
+      title: "Edit"
+    })
+  })
+  .catch (error => {
+    console.log(error)
+    res.redirect("/studios")
+  })
+}
+
 
 export { 
   index,
   create, 
-  show
+  show, 
+  edit 
 }
