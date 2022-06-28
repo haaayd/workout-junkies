@@ -53,7 +53,7 @@ function edit (req, res) {
   .then(studio => {
     res.render("studios/edit", {
       studio: studio, 
-      title: "Edit"
+      title: "Edit Studio"
     })
   })
   .catch (error => {
@@ -67,7 +67,7 @@ function update (req, res) {
   .then( studio => {
     if (studio.owner.equals(req.user.profile._id)) {
       req.body.parking = !!req.body.parking
-      studio.updateOne(req.body, {new: true})
+      studio.updateMany(req.body, {new: true})
       .then(() => {
         res.redirect(`studios/${studio._id}`)
 
@@ -115,6 +115,20 @@ function showClass (req, res) {
   })
     
 }
+function createClass(req, res) {
+  Studio.findById(req.params.id)
+  .then(studio => {
+    studio.classes.push(req.body)
+    studio.save()
+    .then(() => {
+      res.redirect(`/studios/${studio._id}`)
+    })
+  })
+  .catch (error => {
+    console.log(error)
+    res.redirect("/studios")
+  })
+}
 
 export { 
   index,
@@ -124,5 +138,6 @@ export {
   edit,
   update,
   deleteStudio as delete, 
-  showClass
+  showClass,
+  createClass
 }

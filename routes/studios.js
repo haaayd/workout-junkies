@@ -12,15 +12,16 @@ router.get("/new", studiosCtrl.new)
 router.get("/:id", studiosCtrl.show)
 //GET localhost:3000/studios/:id
 router.get("/:id", isLoggedIn, studiosCtrl.showClass)
-
 //GET localhost:3000/studios/:id/edit
 router.get("/:id/edit", isLoggedIn, studiosCtrl.edit)
+
 
 //PUT localhost:3000/studios/:id
 router.put("/:id", isLoggedIn, studiosCtrl.update)
 
 //POST localhost:3000/studios
 router.post("/", isLoggedIn, studiosCtrl.create)
+router.post("/:id/classes", isLoggedIn, studiosCtrl.createClass)
 
 //DELETE localhost:3000/studios/:id
 router.delete("/:id", isLoggedIn, studiosCtrl.delete)
