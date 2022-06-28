@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 <main>
   <h1><%= studio.owner.name %> Visted:</h1>
-\
+
 <section>
   <h2><%= studio.name %></h2>
   <h2>Loacted at: <%= studio.location %> </h2>
@@ -24,9 +24,9 @@
   method="POST"
 >
 <label for="category">Class Type</label>
-<input type="text", name="category-input">
+<input type="text", name="category">
 <label for="level">Level</label>
-<input type="text" name="level-input">
+<input type="text" name="level">
 <button type="submit">Submit</button>
 </form>
 <% if (studio.classes.length) { %>

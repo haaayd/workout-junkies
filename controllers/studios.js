@@ -116,6 +116,7 @@ function showClass (req, res) {
     
 }
 function createClass(req, res) {
+  console.log(req.body, "LOOK AT ME!!!")
   Studio.findById(req.params.id)
   .then(studio => {
     studio.classes.push(req.body)
