@@ -130,7 +130,22 @@ function createClass(req, res) {
   })
 }
 function createReview(req, res) {
-  console.log(req.body, "LOOK AT ME!!!")
+  console.log(req.params, "HEY!");
+  Studio.findById(req.params.studioId)
+  .then(studio => {
+    console.log(studio)
+    const c = studio.classes.id(req.params.classId)
+    console.log(c)
+    c.reviews.push(req.body)
+    studio.save()
+    .then(() => {
+      res.redirect(`/studios/${studio._id}`)
+    })
+  })
+  .catch (error => {
+    console.log(error)
+    res.redirect("/studios")
+  })
 }
 
 export { 

@@ -36,35 +36,48 @@
     
   </head>
   <body>
-    <% studio.classes.forEach(function(aClass) { %>
-      <div><%= aClass.category%></div>
-      <div><%= aClass.level%> </div>
+    <% studio.classes.forEach(function(c) { %>
+      <section>
+        <div><%= c.category%></div>
+        <div><%= c.level%> </div>
+        <div>
+          <h2>Reviews</h2>
+          <form 
+            id="add-review"
+            action="/studios/<%= studio._id %>/classes/<%= c._id %>/reviews"
+            method="POST"
+          >
+            <label for="comments">Review:</label>
+            <textarea name="comments" id="comment-textarea"></textarea>
+            <label for="rating-select">Rating:</label>
+            <select name="rating" id="rating-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5" selected>5</option>
+            </select>
+            <button type="submit">Add Reviews</button>
+          </form>
+          <% if (c.reviews?.length) { %>
+              <% c.reviews.forEach(function(review) { %>
+                <div><%= review.comments%></div>
+                <div><%= review.rating%> </div>
+          
+                <% }) %> 
+            <% } else { %> 
+            <h2>No reivews displayed yet</h2>
+            <% } %> 
+        
+        </div>
+
+      </section>
 
       <% }) %> 
   </body>
   <% } else { %> 
   <h2>No classes displayed yet</h2>
-  <% } %> 
-  <br>
-  <h2>Reviews</h2>
-  <form 
-    id="add-review"
-    action="/studios/<%= studio._id %>/reviews"
-    method="POST"
-  >
-    <label for="comments-textarea">Review:</label>
-    <textarea name="Comments" id="comment-textarea"></textarea>
-    <label for="rating-select">Rating:</label>
-    <select name="rating" id="rating-select">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5" selected>5</option>
-    </select>
-    <button type="submit">Add Reviews</button>
-  </form>
-  
+  <% } %>   
 </main>
 
 <%- include('../partials/footer') %>
