@@ -9,10 +9,11 @@
   <h2>All Studios</h2>
 	<ul>
   <% studios.forEach(studio => { %>
-    <li>Studio:<%= studio.name %></li>
-    <li>Location:<%= studio.location %></li>
+    <li>Studio: 
+      <a href="/studios/<%=studio._id%> "><%= studio.name %></a>
+    </li>
+    <li>Location: <%= studio.location %></li>
     <li>
-      <a href="/studios/<%= studio._id%>"><%= studio.parking%></a>
       Accesible Parking? <%= studio.parking ? "Yes" : "No" %> 
     </li>
   <% }) %>
