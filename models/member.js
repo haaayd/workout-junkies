@@ -2,15 +2,15 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const profileSchema = new Schema({
+const memberSchema = new Schema({
   name: String,
   avatar: String,
 }, {
   timestamps: true
 })
 
-const Profile = mongoose.model('Profile', profileSchema)
+const Member = mongoose.model('Member', memberSchema)
 
 export {
-  Profile
+  Member
 }
