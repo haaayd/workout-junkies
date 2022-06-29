@@ -1,4 +1,4 @@
-import { Profile } from '../models/member.js'
+import { Profile } from '../models/profile.js'
 
 function index(req, res) {
 
