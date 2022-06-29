@@ -12,7 +12,23 @@ function index(req, res) {
     res.redirect(`/profiles/${req.user.profile._id}`)
   })
 }
+function show(req, res) {
+  Profile.findById(req.params.id)
+  .then(profile => {
+    profile._id.equals(req.user.profile._id)
+    res.render("profiles/show", {
+      profile : profile 
+      
+
+    })
+  })
+  .catch((err) => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
 
 export {
-  index
+  index, 
+  show
 }
