@@ -130,7 +130,6 @@ function createClass(req, res) {
   })
 }
 function createReview(req, res) {
-  console.log(req.params, "HEY!");
   Studio.findById(req.params.studioId)
   .then(studio => {
     console.log(studio)
