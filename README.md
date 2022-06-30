@@ -1,4 +1,4 @@
-** Workout Junkie **
+<h1> Workout Junkie<h1>
   <p> This app is for anyone who is new to the workout industry, looking to switch things up or even experiment with new workouts in their local area! </p>
   <div></div>
 <br></br>
