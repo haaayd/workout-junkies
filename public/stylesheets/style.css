@@ -29,7 +29,7 @@ nav {
   font-size: 2rem;
   color: #D6AD60;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .btn {
   background-color: #D6AD60;
