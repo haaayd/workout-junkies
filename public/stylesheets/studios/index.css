@@ -1,6 +1,7 @@
 h1, h2 {
   text-align: center;
   color: #122620;
+  
 }
 
 
@@ -9,6 +10,7 @@ h1, h2 {
   display: flex;
   flex-direction: column;
   border: 2px #B68D40 solid;
+  border-radius: 10px;
 
 }
 .studio {
@@ -16,15 +18,21 @@ h1, h2 {
   background:#122620;
   text-align: center;
   margin: 10px 10px;
-  text-decoration: none;
   padding: 10px 10px;
+  border-radius: 10px;
+  text-decoration-line:underline;
 
 
 }
+
 a {
   color:#B68D40;
   text-decoration: none;
   font-size: 18px;
+}
+
+a:hover {
+  color: #F4EBD0 ;
 }
 
 .container {
@@ -33,9 +41,16 @@ a {
   justify-content: center;
   margin: 20px 20px;
 
+
 }
 
 .list{
   font-size: large;
+  text-decoration: none;
+  text-align: center;
+  list-style: none;
+  justify-content: center;
+  padding: bottom 10px;
+  color: #122620;
 }
 
