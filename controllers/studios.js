@@ -64,12 +64,12 @@ function edit (req, res) {
 
 function update (req, res) {
   Studio.findById(req.params.id)
-  .then( studio => {
+  .then(studio => {
     if (studio.owner.equals(req.user.profile._id)) {
       req.body.parking = !!req.body.parking
-      studio.updateMany(req.body, {new: true})
+      studio.updateOne(req.body, {new: true})
       .then(() => {
-        res.redirect(`studios/${studio._id}`)
+        res.redirect(`/studios/${studio._id}`)
 
       })
     } else {
