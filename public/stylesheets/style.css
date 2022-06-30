@@ -26,16 +26,26 @@ body {
 
 nav {
   background-color: #122620;
-  font-size: 2rem;
   color: #D6AD60;
-  display: flex;
-  justify-content: space-evenly;
+  display:flex;
+  justify-content: space-around;
+  
 }
 .btn {
   background-color: #D6AD60;
   color: #122620;
-  border-radius: 10px;
+  border-radius: 15px;
+  text-align: center;
+  height: 30px;
+
 }
+.dumb { 
+  font-size:xx-large;
+  display: flex;
+  justify-content:flex-start;
+  margin: bottom 30px;
+
+} 
 
 main {
   display: flex;

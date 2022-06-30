@@ -1,6 +1,7 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
+<link rel="stylesheet" href="/stylesheets/index.css">
 <main>
   <h1><%= user ? user.profile.name : "Welcome to the Workout Junkie family!" %></h1>
   <% if (user?.profile.avatar) { %>
