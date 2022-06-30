@@ -1,23 +1,29 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+<link rel="stylesheet" href="/stylesheets/studios/index.css">
+
 <section>
   <h1>Welcome to the world of Workout Junkies!</h1>
   
 
 
   <h2>All Studios</h2>
-	<ul>
   <% studios.forEach(studio => { %>
-    <li>Studio: 
-      <a href="/studios/<%=studio._id%> "><%= studio.name %></a>
-    </li>
-    <li>Location: <%= studio.location %></li>
-    <li>
-      Accesible Parking? <%= studio.parking ? "Yes" : "No" %> 
-    </li>
+    <div class="container">
+      <div class="card">
+        <div class="studio"> 
+          <a href="/studios/<%=studio._id%> "><%= studio.name %></a>
+        </div>
+        <div class="list">
+          <li> Location: <%= studio.location %>
+          </li>
+          <li> Accesible Parking? <%= studio.parking ? "Yes" : "No" %> 
+          </li>
+        </div>
+    </div>
+  </div>
   <% }) %>
-  </ul>
 </section>
 
 <%- include('../partials/footer') %>

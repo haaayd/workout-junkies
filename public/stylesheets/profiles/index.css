@@ -27,10 +27,10 @@
   padding: 10px;
 }
 
-.card > img {
+/* .card > img {
   border-radius: 10px;
   height: 96px;
-}
+} */
 
 .card-body {
   display: flex;

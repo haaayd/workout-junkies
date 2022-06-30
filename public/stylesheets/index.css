@@ -2,3 +2,7 @@ a {
   display: flex;
   justify-content: center;
 }
+main {
+  border: 40px 20px;
+
+}
