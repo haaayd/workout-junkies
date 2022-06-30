@@ -7,7 +7,7 @@ const reviewSchema = new Schema ({
   instructor: String,
   packed: Boolean, 
   comments: String,
-  rating: {type:Number, min:1, max:5, default:3} 
+  rating: {type:String, min:1, max:5, default:3} 
 
 })
 const classSchema = new Schema ({

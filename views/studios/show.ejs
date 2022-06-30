@@ -27,7 +27,7 @@
 <input type="text", name="category">
 <label for="level">Level</label>
 <input type="text" name="level">
-<button type="submit">Submit</button>
+<button class="btn" type="submit">Submit</button>
 </form>
 <% if (studio.classes.length) { %>
   <head>
@@ -51,13 +51,13 @@
             <textarea name="comments" id="comment-textarea"></textarea>
             <label for="rating-select">Rating:</label>
             <select name="rating" id="rating-select">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5" selected>5</option>
+              <option value="⭐️">⭐️</option>
+              <option value="⭐️⭐️">⭐️⭐️</option>
+              <option value="⭐️⭐️⭐️">⭐️⭐️⭐️</option>
+              <option value="⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️</option>
+              <option value="⭐️⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️⭐️</option>
             </select>
-            <button type="submit">Add Reviews</button>
+            <button class="btn" type="submit">Add Reviews</button>
           </form>
           <% if (c.reviews?.length) { %>
               <% c.reviews.forEach(function(review) { %>

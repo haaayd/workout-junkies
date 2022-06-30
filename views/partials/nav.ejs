@@ -7,11 +7,19 @@
   <div>
   <ion-icon name="barbell-outline"></ion-icon>
   </div>
-  <a href="/profiles">Profiles</a>
-  <a href="/studios">Studios</a>
-  <a href="/studios/new">Add Studios</a>
+  <a href="/profiles">
+    <button class="btn" type="submit">Profile</button>
+  </a>
+  <a href="/studios">
+    <button class="btn" type="submit">Studios</button>
+  </a>
+  <a href="/studios/new">
+    <button class="btn" type="submit">Add a Studio</button>
+  </a>
   <% if (user) { %>
-    <a href="/auth/logout">Logout</a>
+    <a href="/auth/logout">
+      <button class="btn" type="submit">Logout</button>
+    </a>
   <% } else { %>
     <a href="/auth/google" class="siwg-link">
       <button type="submit" class="siwg">
