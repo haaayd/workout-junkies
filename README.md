@@ -16,10 +16,9 @@
   <li>HTML</li>
   <li>Git</li>
 </ul>
-<br></br>
-<h2>Credit!</h2>
+
+<h2>Credits</h2>
 <ul>
-  <li></li>
   <li>Bootstrap</li>
   <li>Font Awesome</li>
   <li>GA lecture notes and videos</li>
@@ -29,6 +28,7 @@
 <h2>Next Steps</h2>
 <ul>
   -[] Add more functionality to my review's portion for each class
+  <br></br>
   -[] Be able to filter studios based on location, type of workout, and level.
 </ul>
 
