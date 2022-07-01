@@ -1,6 +1,7 @@
 # **Workout Junkie 💪🏽**
-< image will go here>
+<img src="./public/assets/home.png">
 <p> This app is for anyone who is new to the workout industry, looking to switch things up or even experiment with new workouts in their local area! </p>
+<img src="./public/assets/work.png">
 
   ## Getting Started 
   → <a href="https://trello.com/b/tdZ3MiQm/workout-junkie">
@@ -25,9 +26,8 @@
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-## What is next for Workout Junkie?
+## 🔜 What is next for Workout Junkie?  
 
-  # 🔜 
 
 → Add more functionality to my review's portion for each class
 
