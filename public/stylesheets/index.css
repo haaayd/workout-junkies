@@ -8,8 +8,10 @@ main {
 
 }
 p {
-  display: flex;
-  justify-content: right;
+  text-align: justify;
+  justify-content: center;
+  font-size: 18px;
+  padding: 60px;
 }
 #p {
   display: flex;
