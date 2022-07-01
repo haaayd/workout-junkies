@@ -1,47 +1,58 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/studios/show.css">
 <main>
-  <h1><%= studio.owner.name %> Visted:</h1>
+  <h1> <%= studio.owner.name %> Visted: </h1>
 
 <section>
-  <h2><%= studio.name %></h2>
-  <h2>Loacted at: <%= studio.location %> </h2>
-  <h2>Accessible Parking: <%= studio.parking? 'Yes! ' : 'No!' %></h2>
+  <table>
+    <tr>
+      <td><%= studio.name %></td>
+    </tr>
+    <tr>
+      <td>Loacted at:</td>
+      <td><%= studio.location %></td>
+    </tr>
+    <tr>
+      <td>Accessible Parking:</td>
+      <td><%= studio.parking? 'Yes! ' : 'No!' %></td>
+    </tr>
+  </table>
   <% if (studio.owner.equals(user?.profile._id)) { %>
     <form action="/studios/<%= studio._id%>/edit" method="GET">
-    <button class="btn" type="submit">Edit Entry</button>
+    <button id="studB" class="btn" type="submit">Edit Entry</button>
   </form>
   <form action="/studios/<%=studio._id%>?_method=DELETE" method="POST">
-    <button class="btn" type="submit">Delete</button>
+    <button class="btn" id="studB" type="submit">Delete</button>
   </form>
     <% } %> 
 </section>
-
-<h2>Classes</h2>
 <form
-  id="classes-form"
+  id="classes-f"
   action="/studios/<%=studio._id%>/classes"
   method="POST"
 >
-<label for="category">Class Type</label>
+<label for="category"><b>Class Type: </b></label>
 <input type="text", name="category">
-<label for="level">Level</label>
+<label for="level"><b>Level: </b></label>
 <input type="text" name="level">
+<select name="level" id="level-select">
+  <option value="beginner">beginner</option>
+  <option value="moderate">moderate</option>
+  <option value="advance">advance</option>
+  <option value="all levels">all levels</option>
+</select>
 <button class="btn" type="submit">Submit</button>
 </form>
 <% if (studio.classes.length) { %>
-  <head>
-    <h2>Class Type</h2>
-    <h2>Level</h2>
-    
-  </head>
   <body>
     <% studio.classes.forEach(function(c) { %>
-      <section>
-        <div><%= c.category%></div>
-        <div><%= c.level%> </div>
-        <div>
-          <h2>Reviews</h2>
+      <section id="revs">
+        <ul>Classes They Offer!
+          <li>Class Type: <%= c.category%></li>
+          <li>Level: <%= c.level%></li>
+        </ul>
+        <b>
           <form 
             id="add-review"
             action="/studios/<%= studio._id %>/classes/<%= c._id %>/reviews"
@@ -49,7 +60,7 @@
           >
             <label for="comments">Review:</label>
             <textarea name="comments" id="comment-textarea"></textarea>
-            <label for="rating-select">Rating:</label>
+            <label for="rating-select"></label>
             <select name="rating" id="rating-select">
               <option value="⭐️">⭐️</option>
               <option value="⭐️⭐️">⭐️⭐️</option>
@@ -61,8 +72,8 @@
           </form>
           <% if (c.reviews?.length) { %>
               <% c.reviews.forEach(function(review) { %>
-                <div><%= review.comments%></div>
-                <div><%= review.rating%> </div>
+                <div id="revByOwner"><b>Review from: <%= studio.owner.name %></b> <%= review.comments%></div>
+                <div class="review"><%= review.rating%></div>
           
                 <% }) %> 
             <% } else { %> 

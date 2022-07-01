@@ -1,0 +1,32 @@
+#studB {
+display: flexbox;
+color: #122620;
+margin: 10px 10px;
+
+
+
+
+}
+section {
+  display: flex;
+  font-size: larger;
+  
+}
+section > h2 {
+  display: flexbox;
+  text-align: justify;
+  text-decoration: none;
+  
+}
+
+#classes {
+  display: flex;
+  align-items: flex-start;
+}
+
+#add-review {
+  border: 10px;
+  display: flex;
+  align-items: center;
+
+}

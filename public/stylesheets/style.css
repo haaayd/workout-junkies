@@ -29,6 +29,8 @@ nav {
   color: #D6AD60;
   display:flex;
   justify-content: space-around;
+  font-family: 'Gentium Plus', serif;
+  font-family: 'Source Serif Pro', serif;
   
 }
 .btn {
@@ -56,4 +58,6 @@ main {
 
 h1 {
   font-size: 3.6rem;
+  font-family: 'Gentium Plus', serif;
+  font-family: 'Source Serif Pro', serif;
 }

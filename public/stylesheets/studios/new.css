@@ -1,0 +1,29 @@
+h2 {
+  font-family: 'Gentium Plus', serif;
+  font-family: 'Source Serif Pro', serif;
+  font-family: bold;
+  text-align: center;
+  
+}
+
+.container {
+  padding: 2px 15px;
+  display:flex;
+  justify-content: center;
+  margin: 20px 20px;
+}
+
+label { 
+  font-family: bold;
+  font-size: 14px;
+  color: #122620; 
+
+}
+input {
+  border-radius: 5px;
+}
+#sbtn {
+  display: flexbox;
+  align-items: right;
+
+}

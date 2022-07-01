@@ -1,8 +1,17 @@
-a {
+img {
   display: flex;
   justify-content: center;
 }
 main {
   border: 40px 20px;
+  grid-template-columns: 1fr 1fr ;
 
+}
+p {
+  display: flex;
+  justify-content: right;
+}
+#p {
+  display: flex;
+  justify-content: center;
 }

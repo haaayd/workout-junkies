@@ -1,24 +1,27 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/studios/new.css">
 <main>
   <section>
     <% if (user) { %> 
       <h2>Add Studio</h2>
+      <div class="container">
       <form action="/studios" method="POST">
         <label>
-          Name of Studio: 
+          <b> Name of Studio: </b>
           <input type="text" name="name" autocomplete="off">
         </label>
         <label>
-          Location:
+          <b>Location:</b>
           <input type="text" name="location" autocomplete="off">
         </label>
         <label>
-          Acessible Parking? 
+          <b>Acessible Parking? </b>
           <input type="checkbox" name="parking">
         </label>
-        <button class="btn" type="submit">Add Studio</button>
+        <button id="sbtn" class="btn" type="submit">Add Studio</button>
       </form>
+      </div>
       <% } %> 
   </section>
 </main>
