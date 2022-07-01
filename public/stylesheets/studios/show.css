@@ -3,7 +3,10 @@ display: flexbox;
 color: #122620;
 margin: 10px 10px;
 
-
+}
+h3 {
+  display: Flex;
+  
 
 
 }
@@ -28,5 +31,60 @@ section > h2 {
   border: 10px;
   display: flex;
   align-items: center;
+  gap: 10px;
 
 }
+
+#revs {
+  padding: 50px 50px;
+  gap: 10px;
+}
+
+#revByOwner {
+  padding: 50px 50;
+  font-size: 14px;
+
+}
+
+ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  font-size: 14px;
+}
+
+h3 {
+  font-size: 18px;
+  color: #122620;
+}
+
+td {
+  display: flexbox;
+  padding: 10px 10px;
+  justify-content: left;
+
+}
+
+table{
+  margin: top 50px;
+}
+
+/* <section>
+<form
+  id="classes-f"
+  action="/studios/<%=studio._id%>/classes"
+  method="POST"
+>
+<label for="category"><b>Class Type: </b></label>
+<input type="text" name="category">
+<label for="level"><b>Level: </b></label>
+<input type="text" name="level">
+<select name="level" id="level-select">
+  <option value="beginner">beginner</option>
+  <option value="moderate">moderate</option>
+  <option value="advance">advance</option>
+  <option value="all levels">all levels</option>
+</select>
+<button class="btn" type="submit">Submit</button>
+</form>
+</section> */

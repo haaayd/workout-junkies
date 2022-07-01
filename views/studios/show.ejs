@@ -3,18 +3,13 @@
 <link rel="stylesheet" href="/stylesheets/studios/show.css">
 <main>
   <h1> <%= studio.owner.name %> Visted: </h1>
+  <h3><%= studio.name %></h3>
 
 <section>
   <table>
-    <tr>
-      <td><%= studio.name %></td>
-    </tr>
-    <tr>
-      <td>Loacted at:</td>
-      <td><%= studio.location %></td>
-    </tr>
-    <tr>
-      <td>Accessible Parking:</td>
+      <td><b>Loacted at:</b></td>
+      <td><%=studio.location%></td>
+      <td><b>Acessible Parking:</b></td>
       <td><%= studio.parking? 'Yes! ' : 'No!' %></td>
     </tr>
   </table>
@@ -27,32 +22,29 @@
   </form>
     <% } %> 
 </section>
+<br>
+<br>
 <form
-  id="classes-f"
+  id="classes-form"
   action="/studios/<%=studio._id%>/classes"
   method="POST"
 >
-<label for="category"><b>Class Type: </b></label>
+<label for="category">Class Type</label>
 <input type="text", name="category">
-<label for="level"><b>Level: </b></label>
+<label for="level">Level</label>
 <input type="text" name="level">
-<select name="level" id="level-select">
-  <option value="beginner">beginner</option>
-  <option value="moderate">moderate</option>
-  <option value="advance">advance</option>
-  <option value="all levels">all levels</option>
-</select>
-<button class="btn" type="submit">Submit</button>
+<button type="submit">Submit</button>
 </form>
+
 <% if (studio.classes.length) { %>
   <body>
     <% studio.classes.forEach(function(c) { %>
-      <section id="revs">
-        <ul>Classes They Offer!
-          <li>Class Type: <%= c.category%></li>
-          <li>Level: <%= c.level%></li>
+        <ul>
+          <li><b>Class Type:</b> <%= c.category%></li>
+          <li><b>Level: </b> <%= c.level%></li>
         </ul>
         <b>
+          <section id="revs"></section>
           <form 
             id="add-review"
             action="/studios/<%= studio._id %>/classes/<%= c._id %>/reviews"
@@ -72,7 +64,12 @@
           </form>
           <% if (c.reviews?.length) { %>
               <% c.reviews.forEach(function(review) { %>
-                <div id="revByOwner"><b>Review from: <%= studio.owner.name %></b> <%= review.comments%></div>
+                <br>
+                <div id="revByOwner"><b>Review from: <%= studio.owner.name %></b></div>
+                <br>
+
+                  <div><%= review.comments%></div>
+                  <br>
                 <div class="review"><%= review.rating%></div>
           
                 <% }) %> 
