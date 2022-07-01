@@ -69,22 +69,3 @@ table{
   margin: top 50px;
 }
 
-/* <section>
-<form
-  id="classes-f"
-  action="/studios/<%=studio._id%>/classes"
-  method="POST"
->
-<label for="category"><b>Class Type: </b></label>
-<input type="text" name="category">
-<label for="level"><b>Level: </b></label>
-<input type="text" name="level">
-<select name="level" id="level-select">
-  <option value="beginner">beginner</option>
-  <option value="moderate">moderate</option>
-  <option value="advance">advance</option>
-  <option value="all levels">all levels</option>
-</select>
-<button class="btn" type="submit">Submit</button>
-</form>
-</section> */
